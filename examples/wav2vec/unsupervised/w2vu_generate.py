@@ -48,7 +48,7 @@ class DecoderType(Enum):
 
 @dataclass
 class UnsupGenerateConfig(FairseqDataclass):
-    fairseq: FairseqConfig = FairseqConfig()
+    fairseq: FairseqConfig = field(default_factory=FairseqConfig)
     lm_weight: float = field(
         default=2.0,
         metadata={"help": "language model weight"},

@@ -34,7 +34,7 @@ class Data2VecTextConfig(FairseqDataclass):
 
     head_layers: int = 1
 
-    transformer: TransformerConfig = TransformerConfig()
+    transformer: TransformerConfig = field(default_factory=TransformerConfig)
 
     load_checkpoint_heads: bool = field(
         default=False,

@@ -19,21 +19,21 @@ class A(FairseqDataclass):
 
 @dataclass
 class B(FairseqDataclass):
-    bar: A = field(default=A())
+    bar: A = field(default_factory=A)
     foo: int = field(default=0, metadata={"help": "not a bar"})
 
 
 @dataclass
 class D(FairseqDataclass):
-    arch: A = field(default=A())
+    arch: A = field(default_factory=A)
     foo: int = field(default=0, metadata={"help": "not a bar"})
 
 
 @dataclass
 class C(FairseqDataclass):
     data: str = field(default="test", metadata={"help": "root level data input"})
-    encoder: D = field(default=D())
-    decoder: A = field(default=A())
+    encoder: D = field(default_factory=D)
+    decoder: A = field(default_factory=A)
     lr: int = field(default=0, metadata={"help": "learning rate"})
 
 

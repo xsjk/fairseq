@@ -82,7 +82,7 @@ class Wav2vec_UConfig(FairseqDataclass):
     temp: Tuple[float, float, float] = (2, 0.1, 0.99995)
     input_dim: int = 128
 
-    segmentation: SegmentationConfig = SegmentationConfig()
+    segmentation: SegmentationConfig = field(default_factory=SegmentationConfig)
 
 
 class Segmenter(nn.Module):
